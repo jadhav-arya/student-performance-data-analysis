@@ -1,0 +1,36 @@
+
+students = [
+    {"Name": "Aarav", "Math": 85, "Science": 78, "English": 82, "Computer": 90},
+    {"Name": "Priya", "Math": 92, "Science": 88, "English": 91, "Computer": 95},
+    {"Name": "Rahul", "Math": 67, "Science": 72, "English": 70, "Computer": 75},
+    {"Name": "Sneha", "Math": 89, "Science": 94, "English": 87, "Computer": 92},
+    {"Name": "Rohan", "Math": 56, "Science": 61, "English": 65, "Computer": 70},
+    {"Name": "Anaya", "Math": 78, "Science": 85, "English": 80, "Computer": 88},
+    {"Name": "Vikram", "Math": 45, "Science": 55, "English": 60, "Computer": 58},
+    {"Name": "Isha", "Math": 95, "Science": 93, "English": 96, "Computer": 98},
+    {"Name": "Karan", "Math": 72, "Science": 68, "English": 74, "Computer": 80},
+    {"Name": "Meera", "Math": 88, "Science": 90, "English": 85, "Computer": 94}
+]
+
+subjects = ["Math", "Science", "English", "Computer"]
+
+print("STUDENT PERFORMANCE ANALYSIS")
+print("-" * 35)
+
+for student in students:
+    marks = [student[subject] for subject in subjects]
+    average = sum(marks) / len(marks)
+    print(student["Name"], "- Average Marks:", round(average, 2))
+
+print("\nSUBJECT-WISE ANALYSIS")
+print("-" * 35)
+
+for subject in subjects:
+    marks = [student[subject] for student in students]
+    print(subject)
+    print("Average:", round(sum(marks) / len(marks), 2))
+    print("Highest:", max(marks))
+    print("Lowest:", min(marks))
+    print()
+
+print("Total Students:", len(students))
